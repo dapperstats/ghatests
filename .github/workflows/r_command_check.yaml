@@ -38,7 +38,7 @@ jobs:
           use-public-rspm: true
 
       - name: Install system dependencies on non-Linux
-        if: runner.os == 'maxOS'
+        if: runner.os == 'macOS'
         run: |
           brew install jags
 
