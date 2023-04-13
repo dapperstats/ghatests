@@ -1,0 +1,20 @@
+Package: ghatest
+Title: Testing GitHub Actions
+Description: Testing GHA for package building, etc.
+Version: 0.0.1
+Maintainer: Juniper Simonis <simonis@dapperstats.com>
+Authors@R: c(
+    person("Juniper", "Simonis", role = c("aut", "cre"), email = "simonis@dapperstats.com", comment = c(ORCID = "0000-0001-9798-0460"))
+  )
+License: MIT
+Date: 2023-04-13
+Depends: R (>= 3.3.1)
+Imports:
+  rjags
+Suggests:
+  covr,
+  knitr,
+  rmarkdown,
+  testthat
+Encoding: UTF-8
+RoxygenNote: 7.2.3
