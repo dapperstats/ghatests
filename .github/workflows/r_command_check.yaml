@@ -42,10 +42,17 @@ jobs:
         run: |
           brew install jags
 
+          
+      - name: Install system dependencies on Windows
+        if: runner.os == 'windows'
+        run: |
+          (New-Object System.Net.WebClient).DownloadFile('https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Windows/JAGS-4.3.1.exe', 'C:\JAGS-4.3.1.exe')
+        shell: powershell
+
+
       - name: curl test
         if: runner.os == 'Windows'
         run: |
-          curl https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Windows/JAGS-4.3.1.exe -o C:\JAGS-4.3.1.exe
           dir C:\
           C:\JAGS-4.3.1.exe
         shell: cmd
