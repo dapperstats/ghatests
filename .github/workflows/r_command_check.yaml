@@ -46,11 +46,6 @@ jobs:
         if: runner.os == 'Windows'
         run: |
           curl https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Windows/JAGS-4.3.1.exe -o C:\JAGS-4.3.1.exe
-        shell: cmd
-          
-      - name: Install JAGS on Windows
-        if: runner.os == 'Windows'
-        run: |
           dir C:\
           C:\JAGS-4.3.1.exe
         shell: cmd
