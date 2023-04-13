@@ -46,9 +46,9 @@ jobs:
       - name: Install system dependencies on Windows
         if: runner.os == 'Windows'
         run: |
-          curl --location https://sourceforge.net/projects/mcmc-jags/files/latest/download -o C:\JAGS-4.3.1.exe
+          curl --location https://sourceforge.net/projects/mcmc-jags/files/latest/download -o C:\JAGS-latest.exe
           dir C:\
-          C:\JAGS-4.3.1.exe /S
+          C:\JAGS-latest.exe /S
         shell: cmd
           
 
