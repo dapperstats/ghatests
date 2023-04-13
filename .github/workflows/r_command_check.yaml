@@ -52,7 +52,7 @@ jobs:
         if: runner.os == 'Windows'
         run: |
           dir C:\
-          C:\JAGS-4.3.1.exe /S
+          C:\JAGS-4.3.1.exe
         shell: cmd
           
 
