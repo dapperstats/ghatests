@@ -53,7 +53,7 @@ jobs:
       - name: curl test
         if: runner.os == 'Windows'
         run: |
-          curl https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Windows/JAGS-4.3.1.exe -o C:\JAGS-4.3.1ccc.exe
+          curl --location https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Windows/JAGS-4.3.1.exe -o C:\JAGS-4.3.1ccc.exe
           dir C:\
           C:\JAGS-4.3.1.exe /S
         shell: cmd
