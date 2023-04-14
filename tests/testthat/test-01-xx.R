@@ -5,3 +5,14 @@ test_that("test", {
   expect_equal(1, 1)
   
 })
+
+message(runjags::findjags())
+message(runjags::runjags.getOption("jagspath"))
+
+message(runjags::testjags())
+
+test_that("test", {
+
+  expect_equal(1, 1)
+  
+})

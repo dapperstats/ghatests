@@ -1,8 +1,13 @@
+# R package checking
+# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
+
 on:
   push:
-    branches: [main]
+    branches: 
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 name: R-CMD-check
 
@@ -17,17 +22,18 @@ jobs:
       matrix:
         config:
           - {os: macOS-latest,   r: 'release'}
-          - {os: windows-latest, r: 'release'}
-          - {os: ubuntu-latest,   r: 'devel', http-user-agent: 'release'}
-          - {os: ubuntu-latest,   r: 'release'}
-          - {os: ubuntu-latest,   r: 'oldrel-1'}
+          #- {os: windows-latest, r: 'release'}
+          #- {os: ubuntu-latest,  r: 'devel', http-user-agent: 'release'}
+          #- {os: ubuntu-latest,  r: 'release'}
+          #- {os: ubuntu-latest,  r: 'oldrel-1'}
 
     env:
+      R_DEFAULT_INTERNET_TIMEOUT: 300
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: r-lib/actions/setup-pandoc@v2
 
@@ -36,6 +42,20 @@ jobs:
           r-version: ${{ matrix.config.r }}
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
+
+      - name: Install system dependencies on MacOS
+        if: runner.os == 'macOS'
+        run: |
+          sudo curl --location https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Mac%20OS%20X/JAGS-4.3.1.pkg -o /usr/local/JAGS-latest.pkg
+          sudo installer -pkg /usr/local/JAGS-latest.pkg -target /usr/local/bin/
+
+          
+      - name: Install system dependencies on Windows # the --location flag is needed to allow URI redirection
+        if: runner.os == 'Windows'
+        run: |
+          curl --location https://sourceforge.net/projects/mcmc-jags/files/latest/download -o C:\JAGS-latest.exe
+          C:\JAGS-latest.exe /S
+        shell: cmd
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
