@@ -46,9 +46,8 @@ jobs:
       - name: Install system dependencies on MacOS
         if: runner.os == 'macOS'
         run: |
-          brew install jags
-          sudo mkdir -p /usr/local/libexec
-          sudo cp -r /usr/local/bin/jags /usr/local/libexec/jags-terminal
+          sudo apt-get update -qq
+          sudo apt-get install jags
           
       - name: Install system dependencies on Windows # the --location flag is needed to allow URI redirection
         if: runner.os == 'Windows'
