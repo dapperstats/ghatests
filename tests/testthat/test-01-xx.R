@@ -6,9 +6,9 @@ test_that("test", {
   
 })
 
-print(runjags::findjags())
-print(runjags::runjags.getOption("jagspath"))
-print(runjags::testjags())
+message(runjags::findjags())
+message(runjags::runjags.getOption("jagspath"))
+message(runjags::testjags())
 
 
 test_that("test", {
