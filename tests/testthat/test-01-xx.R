@@ -9,6 +9,7 @@ test_that("test", {
 print(runjags::findjags())
 print(runjags::runjags.getOption("jagspath"))
 
+print(runjags::testjags())
 
 test_that("test", {
 
