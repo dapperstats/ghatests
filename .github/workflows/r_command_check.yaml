@@ -49,7 +49,6 @@ jobs:
           brew install jags
           sudo mkdir -p /usr/local/libexec
           sudo cp -r /usr/local/bin/jags /usr/local/libexec/jags-terminal
-          ls /usr/local/libexec/jags-terminal
           
       - name: Install system dependencies on Windows # the --location flag is needed to allow URI redirection
         if: runner.os == 'Windows'
