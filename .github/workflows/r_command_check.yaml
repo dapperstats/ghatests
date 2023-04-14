@@ -11,6 +11,8 @@ on:
 
 name: R-CMD-check
 
+permissions: write-all
+
 jobs:
   R-CMD-check:
     runs-on: ${{ matrix.config.os }}
@@ -47,6 +49,8 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install jags
+          mkdir -p /usr/local/libexec/jags-terminal
+          cp /usr/local/bin/jags /usr/local/libexec/jags-terminal
           
       - name: Install system dependencies on Windows # the --location flag is needed to allow URI redirection
         if: runner.os == 'Windows'
