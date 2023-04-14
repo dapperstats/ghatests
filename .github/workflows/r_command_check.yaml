@@ -47,6 +47,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           sudo curl --location https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Mac%20OS%20X/ -o /usr/local/JAGS-latest.pkg
+          sudo installer -pkg /usr/local/JAGS-latest.pkg -target /usr/local/bin/
 
           
       - name: Install system dependencies on Windows # the --location flag is needed to allow URI redirection
