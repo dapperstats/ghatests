@@ -7,6 +7,7 @@ test_that("test", {
 })
 
 print(rjags::jags.version())
+print(runjags::findjags())
 
 test_that("test", {
 
