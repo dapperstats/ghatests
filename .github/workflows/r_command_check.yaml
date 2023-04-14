@@ -11,8 +11,6 @@ on:
 
 name: R-CMD-check
 
-permissions: write-all
-
 jobs:
   R-CMD-check:
     runs-on: ${{ matrix.config.os }}
