@@ -6,10 +6,10 @@ test_that("test", {
   
 })
 
-warning(runjags::findjags())
-warning(runjags::runjags.getOption("jagspath"))
+message(runjags::findjags())
+message(runjags::runjags.getOption("jagspath"))
 
-stop(runjags::testjags())
+message(runjags::testjags())
 
 test_that("test", {
 
