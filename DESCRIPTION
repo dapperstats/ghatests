@@ -10,7 +10,7 @@ License: MIT
 Date: 2023-04-13
 Depends: R (>= 3.3.1)
 Imports:
-  runjags
+  rjags
 Suggests:
   covr,
   knitr,
