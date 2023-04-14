@@ -16,6 +16,7 @@ Suggests:
   knitr,
   rmarkdown,
   testthat
+Remotes: ku-awdc/runjags#4
 SystemRequirements: JAGS 4.x.y
 Encoding: UTF-8
 RoxygenNote: 7.2.3
