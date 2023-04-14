@@ -46,7 +46,7 @@ jobs:
       - name: Install system dependencies on MacOS
         if: runner.os == 'macOS'
         run: |
-          curl --locationhttps://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Mac%20OS%20X/ -o /JAGS-latest.exe
+          curl --location https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Mac%20OS%20X/ -o /JAGS-latest.exe
 
           
       - name: Install system dependencies on Windows # the --location flag is needed to allow URI redirection
