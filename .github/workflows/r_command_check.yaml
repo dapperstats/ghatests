@@ -47,6 +47,8 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install jags
+          ls /usr/local/bin
+          ls /usr/local
           
       - name: Install system dependencies on Windows
         if: runner.os == 'Windows'
