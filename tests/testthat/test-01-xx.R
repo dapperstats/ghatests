@@ -9,7 +9,7 @@ test_that("test", {
 message(runjags::findjags())
 message(runjags::runjags.getOption("jagspath"))
 message(runjags::testjags())
-
+stop("FUCK")
 
 test_that("test", {
 
